@@ -1,33 +1,65 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@import "../lib/Recoleta/stylesheet.css";
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+@layer base {
+    :root {
+        --background: 20 14.3% 4.1%;
+        --foreground: 248 6% 75%;
+        --heading: 249 70% 96%;
+        --grad: 250 40% 20%;
+
+        --card: 0 0% 11%;
+        --card-foreground: 248 6% 75%;
+
+        --popover: 20 14.3% 4.1%;
+        --popover-foreground: 248 6% 75%;
+
+        --primary: 248 100% 63%;
+        --primary-foreground: 24 9.8% 10%;
+
+        --secondary: 253 13% 13%;
+        --secondary-foreground: 248 6% 75%;
+
+        --muted: 12 6.5% 15.1%;
+        --muted-foreground: 24 5.4% 63.9%;
+
+        --accent: 251 100% 83%;
+        --accent-foreground: 248 6% 75%;
+
+        --destructive: 0 62.8% 30.6%;
+        --destructive-foreground: 248 6% 75%;
+
+        --border: 12 6.5% 15.1%;
+        --input: 12 6.5% 15.1%;
+        --ring: 24 5.7% 82.9%;
+        --radius: 0.3rem;
+
+        --recoleta: "Recoleta";
+    }
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
-}
-
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
-}
-
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+@layer base {
+    * {
+        @apply border-border;
+    }
+    body {
+        @apply bg-background text-foreground text-sm;
+    }
+    h1,
+    h2,
+    h3,
+    h4 {
+        @apply text-heading font-recoleta;
+    }
+    ::-webkit-scrollbar {
+        @apply w-[0.725rem];
+    }
+    ::-webkit-scrollbar-track {
+        @apply bg-background;
+    }
+    ::-webkit-scrollbar-thumb {
+        @apply bg-foreground;
+    }
 }
