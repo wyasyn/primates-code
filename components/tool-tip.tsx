@@ -5,7 +5,7 @@ import { TestimonialData } from "./data";
 
 export function AnimatedTooltipCard() {
     return (
-        <div className="flex flex-row items-center justify-center mb-10 w-full">
+        <div className="flex flex-row items-center justify-center">
             <AnimatedTooltip items={TestimonialData} />
         </div>
     );

@@ -5,8 +5,10 @@ import { AnimatedTooltipCard } from "./tool-tip";
 
 function Hero() {
     return (
-        <section className=" py-12 md:py-32 relative ">
-            <div className="container relative z-20">
+        <section className=" py-12 md:pt-32 w-full dark:bg-background bg-foreground  dark:bg-dot-white/[0.1] bg-dot-black/[0.1] relative">
+            {/* Radial gradient for the container to give a faded look */}
+            <div className="absolute pointer-events-none inset-0 flex items-center justify-center dark:bg-background bg-foreground [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)]"></div>
+            <div className="container relative z-10">
                 <h1 className=" tracking-wide text-balance text-3xl sm:text-5xl md:text-7xl font-bold max-w-[30ch] ">
                     We develop{" "}
                     <span className=" text-accent inline-block ">
@@ -29,14 +31,22 @@ function Hero() {
                     and development for a pixel-perfect online experience.
                 </p>
 
-                <div className=" flex items-center">
+                <div className=" flex flex-col sm:flex-row items-start sm:items-center gap-8 sm:gap-12 ">
                     <Link
                         href={`#projects`}
-                        className="inline-flex h-12 animate-shimmer items-center justify-center rounded-md border border-slate-800 bg-[linear-gradient(110deg,#000103,45%,#1e2631,55%,#000103)] bg-[length:200%_100%] px-6 font-medium text-slate-400 transition-colors focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 focus:ring-offset-slate-50"
+                        className="inline-flex animate-shimmer items-center justify-center rounded-lg border border-slate-800 bg-[linear-gradient(110deg,#000103,45%,#1e2631,55%,#000103)] bg-[length:200%_100%] px-6 font-medium text-slate-400 transition-colors focus:outline-none focus:ring-1 focus:ring-slate-400 focus:ring-offset-2 focus:ring-offset-slate-50 py-2 "
                     >
                         View work
                     </Link>
-                    <AnimatedTooltipCard />
+                    <div className=" flex items-center gap-12 ">
+                        <AnimatedTooltipCard />
+                        <div className="text-xs font-light">
+                            <span className=" font-medium text-heading text-sm ">
+                                100+
+                            </span>{" "}
+                            <br /> satisfied clients
+                        </div>
+                    </div>
                 </div>
                 <TrustedCompanies />
             </div>
